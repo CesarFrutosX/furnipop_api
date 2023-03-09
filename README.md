@@ -33,7 +33,11 @@ ___
 ## API Usage
 Any request must be done to this address: **apicei14.ieslasenia.org/**\
 All endpoints return an HTTP response, and information is given in a json format.\
+
 ![response](furnidocu/img/response.png)
+> ^ Sample response for endpoints **/colores**.
+
+\
 Every endpoint in this project is splitted in four different HTTP methods:
 - GET : Used to ask for information to the API.
 - POST : Used to upload information to the API.
@@ -42,11 +46,11 @@ Every endpoint in this project is splitted in four different HTTP methods:
 
 ### **Important** 
 To make a request to any endpoint that requires an ID, for instance: 
-- **/cliente?pk=1**
+- **/cliente/1**
 
 As seen, we must declare that ID as a query string param.
 A multiple ID request would look like this:
-- **/lote/item?lote_pk=1&item_pk=2**
+- **/lote/1/item/2**
 > Every endpoint in this documentation shows how to make a proper request for any kind of information available.
 
 Lastly, POST or PUT methods requere information to be sent, that information must be filled in the <ins> **body**</ins> of the request as <ins> **form-data** </ins> in a key/value format.
@@ -78,7 +82,7 @@ Returns every camion in the database.
 Returns a camion from the database.\
 **Required params:**
 -  pk : ID of a camion.
-> apicei14.ieslasenia.org/camion
+> apicei14.ieslasenia.org/camion/\<pk>
 
 ### [POST] Camion
 Uploads a camion to the database. Returns this camion.\
@@ -93,13 +97,13 @@ Updates a camion from the database. Returns this camion.\
 
 **Required body form-data:**
 - matricula : Self-descriptive.
-> apicei14.ieslasenia.org/camion
+> apicei14.ieslasenia.org/camion/\<pk>
 
 ### [DELETE] Camion
 Deletes a camion from the database. Returns this camion.\
 **Required params:**
 -  pk : ID of a camion.
-> apicei14.ieslasenia.org/camion
+> apicei14.ieslasenia.org/camion/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -113,7 +117,7 @@ Returns every cliente in the database.
 Returns a cliente from the database.\
 **Required params:**
 -  pk : ID of a cliente.
-> apicei14.ieslasenia.org/cliente
+> apicei14.ieslasenia.org/cliente/\<pk>
 
 ### [POST] Cliente
 Uploads a cliente to the database. Returns this cliente.\
@@ -138,13 +142,13 @@ Updates a cliente from the database. Returns this cliente.\
 - fecha_nacimiento : Birthdate of a cliente. (yyyy-MM-dd)
 - email : Email of a cliente.
 - password : Password of a cliente account.
-> apicei14.ieslasenia.org/cliente
+> apicei14.ieslasenia.org/cliente/\<pk>
 
 ### [DELETE] Cliente
 Deletes a cliente from the database. Returns this cliente.\
 **Required params:**
 -  pk : ID of a cliente.
-> apicei14.ieslasenia.org/cliente
+> apicei14.ieslasenia.org/cliente/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -158,7 +162,7 @@ Returns every color in the database.
 Returns a color from the database.\
 **Required params:**
 -  pk : ID of a color.
-> apicei14.ieslasenia.org/color
+> apicei14.ieslasenia.org/color/\<pk>
 
 ### [POST] Color
 Uploads a color to the database. Returns this color.\
@@ -173,13 +177,13 @@ Updates a color from the database. Returns this color.\
 
 **Required body form-data:**
 - nombre : Name of a color.
-> apicei14.ieslasenia.org/color
+> apicei14.ieslasenia.org/color/\<pk>
 
 ### [DELETE] Color
 Deletes a color from the database. Returns this color.\
 **Required params:**
 -  pk : ID of a color.
-> apicei14.ieslasenia.org/color
+> apicei14.ieslasenia.org/color/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -193,7 +197,7 @@ Returns every contenedor in the database.
 Returns a contenedor from the database.\
 **Required params:**
 -  pk : ID of a contenedor.
-> apicei14.ieslasenia.org/contenedor
+> apicei14.ieslasenia.org/contenedor/\<pk>
 
 ### [POST] Contenedor
 Uploads a contenedor to the database. Returns this contenedor.\
@@ -211,13 +215,13 @@ Updates a contenedor from the database. Returns this contenedor.\
 - referencia : Reference code of a contenedor. (AAAA)
 - fecha_alta : Submit date for a contenedor. (yyyy-MM-dd)
   
-> apicei14.ieslasenia.org/contenedor
+> apicei14.ieslasenia.org/contenedor/\<pk>
 
 ### [DELETE] Contenedor
 Deletes a contenedor from the database. Returns this contenedor.\
 **Required params:**
 -  pk : ID of a contenedor.
-> apicei14.ieslasenia.org/contenedor
+> apicei14.ieslasenia.org/contenedor/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -231,7 +235,7 @@ Returns every departamento in the database.
 Returns a departamento from the database.\
 **Required params:**
 -  pk : ID of a departamento.
-> apicei14.ieslasenia.org/departamento
+> apicei14.ieslasenia.org/departamento/\<pk>
 
 ### [POST] Departamento
 Uploads a departamento to the database. Returns this departamento.\
@@ -249,13 +253,13 @@ Updates a departamento from the database. Returns this departamento.\
 - nombre : Name of a departamento.
 - codigo : Code of a department. (AA)
   
-> apicei14.ieslasenia.org/departamento
+> apicei14.ieslasenia.org/departamento/\<pk>
 
 ### [DELETE] Departamento
 Deletes a departamento from the database. Returns this departamento.\
 **Required params:**
 -  pk : ID of a departamento.
-> apicei14.ieslasenia.org/departamento
+> apicei14.ieslasenia.org/departamento/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -269,7 +273,7 @@ Returns every color in the database.
 Returns a direccion from the database.\
 **Required params:**
 -  pk : ID of a direccion.
-> apicei14.ieslasenia.org/direccion
+> apicei14.ieslasenia.org/direccion/\<pk>
 
 ### [POST] Direccion
 Uploads a direccion to the database. Returns this direccion.\
@@ -289,13 +293,13 @@ Updates a direccion from the database. Returns this direccion.\
 
 **Required body form-data:**
 - nombre : Name of a direccion.
-> apicei14.ieslasenia.org/direccion
+> apicei14.ieslasenia.org/direccion/\<pk>
 
 ### [DELETE] Direccion
 Deletes a direccion from the database. Returns this direccion.\
 **Required params:**
 -  pk : ID of a direccion.
-> apicei14.ieslasenia.org/direccion
+> apicei14.ieslasenia.org/direccion/\<pk>
 
 [Go to top](#table-of-contents)
 
@@ -310,7 +314,7 @@ Returns every depertmento in the database.
 Returns an empleado from the database.\
 **Required params:**
 -  pk : ID of an empleado.
-> apicei14.ieslasenia.org/empleado
+> apicei14.ieslasenia.org/empleado/\<pk>
 
 ### [POST] Empleado
 Uploads an empleado to the database. Returns this empleado.\
@@ -338,27 +342,27 @@ Updates an empleado from the database. Returns this empleado.\
 - dni : DNI of an empleado.
 - departamento : Departamento ID of an empleado.
   
-> apicei14.ieslasenia.org/empleado
+> apicei14.ieslasenia.org/empleado/\<pk>
 
 ### [DELETE] Empleado
 Deletes an empleado from the database. Returns this empleado.\
 **Required params:**
 -  pk : ID of an empleado.
-> apicei14.ieslasenia.org/empleado
+> apicei14.ieslasenia.org/empleado/\<pk>
 
 ### [GET] All Empleados from Departamento
 Returns every empleado from a departamento.
 **Required params:**
 - pk : ID of a departamento
-> apicei14.ieslasenia.org/departamento/empleados
+> apicei14.ieslasenia.org/departamento/\<pk>/empleados
 
 ### [PUT] Empleado into Departamento
 Inserts an empleado into a departamento. Returns this empleado.\
 **Required params:**
-- empleado_pk : ID of an empleado.
 - departamento_pk : ID of a departamento.
+- empleado_pk : ID of an empleado.
   
-> apicei14.ieslasenia.org/departamento/empleado
+> apicei14.ieslasenia.org/departamento/\<departamento_pk>/empleado/\<empleado_pk>
 
 
 [Go to top](#table-of-contents)
@@ -369,28 +373,28 @@ ___
 Returns every favorito of a cliente in the database.\
 **Required params:**
 -  pk : ID of a Cliente.
-> apicei14.ieslasenia.org/cliente-favoritos
+> apicei14.ieslasenia.org/cliente/\<pk>/favoritos/
 
 ### [GET] Favorito
 Returns an item from a cliente favorite's list.\
 **Required params:**
 -  cliente_pk : ID of a Cliente.
 -  item_pk : ID of a Item in Cliente's favorite list.
-> apicei14.ieslasenia.org/cliente-favorito
+> apicei14.ieslasenia.org/cliente/\<cliente_pk>/favorito/\<item_pk>
 
 ### [PUT] Favorito
 Adds an item to a cliente favorite's list.\
 **Required params:**
 -  cliente_pk : ID of a Cliente.
 -  item_pk : ID of a Item in Cliente's favorite list.
-> apicei14.ieslasenia.org/cliente-favorito
+> apicei14.ieslasenia.org/cliente/\<cliente_pk>/favorito/\<item_pk>
 
 ### [DELETE] Favorito
 Removes an item from a cliente favorite's list.\
 **Required params:**
 -  cliente_pk : ID of a Cliente.
 -  item_pk : ID of a Item in Cliente's favorite list.
-> apicei14.ieslasenia.org/cliente-favorito
+> apicei14.ieslasenia.org/cliente/\<cliente_pk>/favorito/\<item_pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -405,7 +409,7 @@ Returns every estado of an item in the database.
 Returns an estado of an item from the database.\
 **Required params:**
 -  pk : ID of an estado.
-> apicei14.ieslasenia.org/estado-item
+> apicei14.ieslasenia.org/estado-item/\<pk>
 
 ### [POST] Estado Item
 Uploads an estado of an item to the database. Returns this estado.\
@@ -420,13 +424,13 @@ Updates an estado of an item from the database. Returns this estado.\
 
 **Required body form-data:**
 - nombre : State.
-> apicei14.ieslasenia.org/estado-item
+> apicei14.ieslasenia.org/estado-item/\<pk>
 
 ### [DELETE] Estado Item
 Deletes an estado of an itemfrom the database. Returns this estado.\
 **Required params:**
 -  pk : ID of an estado.
-> apicei14.ieslasenia.org/estado-item
+> apicei14.ieslasenia.org/estado-item/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -441,7 +445,7 @@ Returns every estado of an pedido in the database.
 Returns an estado of an pedido from the database.\
 **Required params:**
 -  pk : ID of an estado.
-> apicei14.ieslasenia.org/estado-pedido
+> apicei14.ieslasenia.org/estado-pedido/\<pk>
 
 ### [POST] Estado Pedidos
 Uploads an estado of an pedido to the database. Returns this estado.\
@@ -456,13 +460,13 @@ Updates an estado of an pedido from the database. Returns this estado.\
 
 **Required body form-data:**
 - nombre : State.
-> apicei14.ieslasenia.org/estado-pedido
+> apicei14.ieslasenia.org/estado-pedido/\<pk>
 
 ### [DELETE] Estado Pedidos
 Deletes an estado of an pedidofrom the database. Returns this estado.\
 **Required params:**
 -  pk : ID of an estado.
-> apicei14.ieslasenia.org/estado-pedido
+> apicei14.ieslasenia.org/estado-pedido/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -479,7 +483,7 @@ Returns every imagen in the database.
 Returns an image item from the database.\
 **Required params:**
 -  pk : ID of an imagen.
-> apicei14.ieslasenia.org/imagen
+> apicei14.ieslasenia.org/imagen/\<pk>
 
 ### [POST] Imagen
 Uploads an image to the database. Returns this image.\
@@ -502,14 +506,14 @@ Updates an image from the database. Returns this image.\
 **Required body form-data:**
 - src : Image file.
 - item : ID of an item bounded to this image.
-> apicei14.ieslasenia.org/imagen
+> apicei14.ieslasenia.org/imagen/\<pk>
 
 
 ### [DELETE] Imagen
 Deletes an imagen from the database. Returns this imagen.\
 **Required params:**
 -  pk : ID of an imagen.
-> apicei14.ieslasenia.org/imagen
+> apicei14.ieslasenia.org/imagen/\<pk>
 
 [Go to top](#table-of-contents)
 
@@ -525,7 +529,7 @@ Returns every item in the database.
 Returns an item from the database.\
 **Required params:**
 -  pk : ID of an item.
-> apicei14.ieslasenia.org/item
+> apicei14.ieslasenia.org/item/\<pk>
 
 ### [POST] Item
 Uploads an item to the database. Returns this item.\
@@ -541,7 +545,7 @@ Uploads an item to the database. Returns this item.\
 - material : Material which an item was made.
 - estado_item : The state of an item.
 - empleado : Responsible Empleado of an item.
-> apicei14.ieslasenia.org/items
+> apicei14.ieslasenia.org/items/
 
 ### [PUT] Item
 Updates an item from the database. Returns this item.\
@@ -560,13 +564,13 @@ Updates an item from the database. Returns this item.\
 - material : Material which an item was made.
 - estado_item : The state of an item.
 - empleado : Responsible Empleado of an item.
-> apicei14.ieslasenia.org/item
+> apicei14.ieslasenia.org/item/\<pk>
 
 ### [DELETE] Item
 Deletes an item from the database. Returns this item.\
 **Required params:**
 -  pk : ID of an item.
-> apicei14.ieslasenia.org/item
+> apicei14.ieslasenia.org/item/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -577,14 +581,14 @@ ___
 Returns every item from a lote item in the database.
 **Required params:**
 - pk : ID of a Lote.
-> apicei14.ieslasenia.org/lote/items
+> apicei14.ieslasenia.org/lote/\<pk>/items
 
 ### [GET] Item from Lote
 Returns an item from a lote in the database.\
 **Required params:**
 - lote_pk : ID of a lote.
 - item_pk : ID of an item.
-> apicei14.ieslasenia.org/lote/item
+> apicei14.ieslasenia.org/lote/\<lote_pk>/item/\<item_pk>
 
 ### [PUT] Item from Lote
 Bounds an item to a lote in the database. Returns this item.\
@@ -601,7 +605,7 @@ Removes an item from a lote in the database. Returns this item.\
 **Required params:**
 - lote_pk : ID of a lote.
 - item_pk : ID of an item.
-> apicei14.ieslasenia.org/lote/item
+> apicei14.ieslasenia.org/lote/\<lote_pk>/item/\<item_pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -615,7 +619,7 @@ Returns every lote in the database.
 Returns a lote from the database.\
 **Required params:**
 -  pk : ID of a lote.
-> apicei14.ieslasenia.org/lote
+> apicei14.ieslasenia.org/lote/\<pk>
 
 ### [POST] Lote
 Uploads a lote to the database. Returns this lote.\
@@ -632,13 +636,13 @@ Updates a color from the database. Returns this color.\
 **Required body form-data:**
 - nombre : Name of a lote.
 - empelado : Responsible Empleado of a lote.
-> apicei14.ieslasenia.org/lote
+> apicei14.ieslasenia.org/lote/\<pk>
 
 ### [DELETE] Color
 Deletes a lote from the database. Returns this lote.\
 **Required params:**
 -  pk : ID of a lote.
-> apicei14.ieslasenia.org/lote
+> apicei14.ieslasenia.org/lote/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -652,7 +656,7 @@ Returns every material in the database.
 Returns a material from the database.\
 **Required params:**
 -  pk : ID of a material.
-> apicei14.ieslasenia.org/material
+> apicei14.ieslasenia.org/material/\<pk>
 
 ### [POST] Material
 Uploads a mateiral to the database. Returns this material.\
@@ -667,13 +671,13 @@ Updates a material from the database. Returns this material.\
 
 **Required body form-data:**
 - nombre : Name of a material.
-> apicei14.ieslasenia.org/material
+> apicei14.ieslasenia.org/material/\<pk>
 
 ### [DELETE] Material
 Deletes a material from the database. Returns this mateiral.\
 **Required params:**
 -  pk : ID of a material.
-> apicei14.ieslasenia.org/material
+> apicei14.ieslasenia.org/material/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -687,7 +691,7 @@ Returns every metodo of a pago in the database.
 Returns a metodo of a pago from the database.\
 **Required params:**
 -  pk : ID of a metodo.
-> apicei14.ieslasenia.org/metodo-pago
+> apicei14.ieslasenia.org/metodo-pago/\<pk>
 
 ### [POST] Metodo Pago
 Uploads a metodo of a pago to the database. Returns this metodo.\
@@ -702,13 +706,13 @@ Updates a metodo of a pago from the database. Returns this metodo.\
 
 **Required body form-data:**
 - cliente : ID of a cliente bounded to this metodo.
-> apicei14.ieslasenia.org/metodo-pago
+> apicei14.ieslasenia.org/metodo-pago/\<pk>
 
 ### [DELETE] Metodo Pago
 Deletes a metodo of a pago from the database. Returns this metodo.\
 **Required params:**
 -  pk : ID of a metodo.
-> apicei14.ieslasenia.org/metodo-pago
+> apicei14.ieslasenia.org/metodo-pago/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -718,7 +722,7 @@ ___
 Returns a paypal from the database.\
 **Required params:**
 -  pk : ID of a paypal.
-> apicei14.ieslasenia.org/paypal
+> apicei14.ieslasenia.org/paypal/\<pk>
 
 ### [POST] Paypal
 Uploads a paypal to the database. Returns this paypal.\
@@ -735,13 +739,13 @@ Updates a paypal from the database. Returns this paypal.\
 **Required body form-data:**
 - email : Paypal email.
 - metodo_pago : Metodo Pago bounded to a paypal.
-> apicei14.ieslasenia.org/paypal
+> apicei14.ieslasenia.org/paypal/\<pk>
 
 ### [DELETE] Paypal
 Deletes a paypal from the database. Returns this paypal.\
 **Required params:**
 -  pk : ID of a paypal.
-> apicei14.ieslasenia.org/paypal
+> apicei14.ieslasenia.org/paypal/\<pk>
 
 [Go to top](#table-of-contents)
 ## Paypal
@@ -750,7 +754,7 @@ Deletes a paypal from the database. Returns this paypal.\
 Returns a tarjeta from the database.\
 **Required params:**
 -  pk : ID of a tarjeta.
-> apicei14.ieslasenia.org/tarjeta
+> apicei14.ieslasenia.org/tarjeta/\<pk>
 
 ### [POST] Tarjeta
 Uploads a tarjeta to the database. Returns this tarjeta.\
@@ -770,13 +774,13 @@ Updates a tarjeta from the database. Returns this tarjeta.\
 - numero : Number of a tarjeta.
 - fecha_caducidad: Expiration date of this. (yyyy-MM-dd)
 - cvv: Secret code behind the card.
-> apicei14.ieslasenia.org/tarjeta
+> apicei14.ieslasenia.org/tarjeta/\<pk>
 
 ### [DELETE] Tarjeta
 Deletes a tarjeta from the database. Returns this tarjeta.\
 **Required params:**
 -  pk : ID of a tarjeta.
-> apicei14.ieslasenia.org/tarjeta
+> apicei14.ieslasenia.org/tarjeta/\<pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -790,7 +794,7 @@ Returns every pedido in the database.
 Returns a pedido from the database.\
 **Required params:**
 -  pk : ID of a pedido.
-> apicei14.ieslasenia.org/pedido
+> apicei14.ieslasenia.org/pedido/\<pk>
 
 ### [POST] Pedido
 Uploads a pedido to the database. Returns this pedido.\
@@ -810,13 +814,13 @@ Updates a pedido from the database. Returns this pedido.\
 
 **Required body form-data:**
 - nombre : Name of a pedido.
-> apicei14.ieslasenia.org/pedido
+> apicei14.ieslasenia.org/pedido/\<pk>
 
 ### [DELETE] Pedido
 Deletes a pedido from the database. Returns this pedido.\
 **Required params:**
 -  pk : ID of a pedido.
-> apicei14.ieslasenia.org/pedido
+> apicei14.ieslasenia.org/pedido/\<pk>
 
 [Go to top](#table-of-contents)
 
@@ -827,14 +831,14 @@ __
 Returns every item from a pedido item in the database.
 **Required params:**
 - pk : ID of a pedido.
-> apicei14.ieslasenia.org/pedido/items
+> apicei14.ieslasenia.org/pedido/\<pk>/items
 
 ### [GET] Item from pedido
 Returns an item from a pedido in the database.\
 **Required params:**
 - pedido_pk : ID of a pedido.
 - item_pk : ID of an item.
-> apicei14.ieslasenia.org/pedido/item
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/item/\<item_pk>
 
 ### [PUT] Item from pedido
 Bounds an item to a pedido in the database. Returns this item.\
@@ -844,14 +848,14 @@ Bounds an item to a pedido in the database. Returns this item.\
   
 **Required body form-data:**
 - cantidad: Quantity of an item in a pedido.
-> apicei14.ieslasenia.org/pedido/item
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/item/\<item_pk>
 
 ### [DELETE] Item from pedido
 Removes an item from a pedido in the database. Returns this item.\
 **Required params:**
 - pedido_pk : ID of a pedido.
 - item_pk : ID of an item.
-> apicei14.ieslasenia.org/pedido/item
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/item/\<item_pk>
 
 [Go to top](#table-of-contents)
 ___
@@ -861,14 +865,14 @@ ___
 Returns every lote from a pedido lote in the database.
 **Required params:**
 - pk : ID of a pedido.
-> apicei14.ieslasenia.org/pedido/lotes
+> apicei14.ieslasenia.org/pedido/\<pk>/lotes
 
 ### [GET] lote from pedido
 Returns an lote from a pedido in the database.\
 **Required params:**
 - pedido_pk : ID of a pedido.
 - lote_pk : ID of an lote.
-> apicei14.ieslasenia.org/pedido/lote
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/lote/\<lote_pk>
 
 ### [PUT] lote from pedido
 Bounds an lote to a pedido in the database. Returns this lote.\
@@ -878,14 +882,14 @@ Bounds an lote to a pedido in the database. Returns this lote.\
   
 **Required body form-data:**
 - cantidad: Quantity of an lote in a pedido.
-> apicei14.ieslasenia.org/pedido/lote
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/lote/\<lote_pk>
 
 ### [DELETE] lote from pedido
 Removes an lote from a pedido in the database. Returns this lote.\
 **Required params:**
 - pedido_pk : ID of a pedido.
 - lote_pk : ID of an lote.
-> apicei14.ieslasenia.org/pedido/lote
+> apicei14.ieslasenia.org/pedido/\<pedido_pk>/lote/\<lote_pk>
 
 [Go to top](#table-of-contents)
 
